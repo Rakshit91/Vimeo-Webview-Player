@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var videoWebView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let url = URL (string: "https://player.vimeo.com/video/\(56282283)")
+        let requestObj = URLRequest(url: url!)
+        videoWebView.load(requestObj)
     }
 
 
